@@ -1,17 +1,17 @@
-sudo yum install -y yum-plugin-replace
+yum install -y yum-plugin-replace
 
 
 # assorted libraries and dependencies
-sudo yum install -y mailcap libnghttp2 libltdl libxml2 libmcrypt
+yum install -y mailcap libnghttp2 libltdl libxml2 libmcrypt
 
 
 # MariaDB (MySQL)
-sudo yum replace mariadb-libs --replace-with mariadb101u-config
-sudo yum install -y mariadb101u-server mariadb101u
+yum replace mariadb-libs --replace-with mariadb101u-config
+yum install -y mariadb101u-server mariadb101u
 
 
 # PHP
-sudo yum install -y php56u php56u-mysqlnd php56u-mcrypt php56u-mbstring 
+yum install -y php56u php56u-mysqlnd php56u-mcrypt php56u-mbstring 
 
 
 # PHP composer
@@ -20,17 +20,17 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
-sudo mv composer.phar /usr/local/bin/composer
+mv composer.phar /usr/local/bin/composer
 
 
 # Apache HTTP Server
-#sudo yum replace httpd --replace-with httpd24u
-sudo yum install -y httpd24u
+#yum replace httpd --replace-with httpd24u
+yum install -y httpd24u
 
 
 # enable system resources
-sudo systemctl start httpd
-sudo systemctl enable httpd
-sudo systemctl start mariadb
-sudo systemctl enable mariadb
+systemctl start httpd
+systemctl enable httpd
+systemctl start mariadb
+systemctl enable mariadb
 
