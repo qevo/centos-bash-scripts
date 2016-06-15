@@ -1,4 +1,4 @@
-sudo yum install yum-plugin-replace
+sudo yum install -y yum-plugin-replace
 
 
 # assorted libraries and dependencies
